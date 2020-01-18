@@ -1,0 +1,1 @@
+A short program to create an Etch-A-Sketch usable in the browser. User will be able to specify and amount of rows and columns, and create a grid. The individual divs will be made by the javascript, not hardcoded into the DOM.
