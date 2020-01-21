@@ -14,11 +14,10 @@ makeGrid(16, 16);
 let gridItems = document.querySelectorAll(".grid-item");
 
 gridItems.forEach((gridItem) => {
-  gridItem.addEventListener("onmouseover", () => {
+  gridItem.addEventListener("mouseover", () => {
     gridItem.style.backgroundColor = 'black';
   });
 });
-
 
 // gridItem.onmouseover = function () {
 //   this.style.backgroundColor = 'black';
