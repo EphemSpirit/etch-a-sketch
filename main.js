@@ -19,11 +19,22 @@ gridItems.forEach((gridItem) => {
   });
 });
 
+
+//buttons
 let resetButton = document.querySelector("#reset-btn");
 
 resetButton.addEventListener("click", () => {
   gridItems.forEach((gridItem) => {
     gridItem.style.backgroundColor = 'white';
+  });
+});
+
+let makeRed = document.querySelector("#make-red");
+makeRed.addEventListener("click", () => {
+  gridItems.forEach((gridItem) => {
+    gridItem.addEventListener("mouseover", () => {
+      gridItem.style.backgroundColor = 'red';
+    });
   });
 });
 // gridItem.onmouseover = function () {
