@@ -9,7 +9,7 @@ function makeGrid (rows, cols) {
   }
 }
 
-makeGrid(16, 16);
+makeGrid(30, 30);
 
 let gridItems = document.querySelectorAll(".grid-item");
 
@@ -19,6 +19,13 @@ gridItems.forEach((gridItem) => {
   });
 });
 
+let resetButton = document.querySelector("#reset-btn");
+
+resetButton.addEventListener("click", () => {
+  gridItems.forEach((gridItem) => {
+    gridItem.style.backgroundColor = 'white';
+  });
+});
 // gridItem.onmouseover = function () {
 //   this.style.backgroundColor = 'black';
 // }
