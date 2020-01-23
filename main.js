@@ -29,7 +29,7 @@ let resetButton = document.querySelector("#reset-btn");
 
 resetButton.addEventListener("click", () => {
   gridItems.forEach((gridItem) => {
-    gridItem.style.backgroundColor = 'white';
+    gridItem.style.backgroundColor = '';
   });
 });
 
