@@ -1,6 +1,10 @@
 const container = document.getElementById("container");
 
+let size = prompt("How many squares epr side would you like?");
+
 function makeGrid (rows, cols) {
+  rows  = size;
+  cols = size;
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
   for (c = 0; c < (rows * cols); c++) {
@@ -9,7 +13,7 @@ function makeGrid (rows, cols) {
   }
 }
 
-makeGrid(30, 30);
+makeGrid();
 
 let gridItems = document.querySelectorAll(".grid-item");
 
