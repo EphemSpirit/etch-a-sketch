@@ -1,19 +1,17 @@
 const container = document.getElementById("container");
 
-let size = prompt("How many squares epr side would you like?");
+// let size = prompt("How many squares epr side would you like?");
 
-function makeGrid (rows, cols) {
-  rows  = size;
-  cols = size;
-  container.style.setProperty('--grid-rows', rows);
-  container.style.setProperty('--grid-cols', cols);
-  for (c = 0; c < (rows * cols); c++) {
+function makeGrid (size) {
+  container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  for (c = 0; c < (size ** 2); c++) {
     let cell = document.createElement("div");
     container.appendChild(cell).className = "grid-item";
   }
 }
 
-makeGrid();
+makeGrid(16);
 
 let gridItems = document.querySelectorAll(".grid-item");
 
@@ -26,7 +24,6 @@ gridItems.forEach((gridItem) => {
 
 //buttons
 let resetButton = document.querySelector("#reset-btn");
-
 resetButton.addEventListener("click", () => {
   gridItems.forEach((gridItem) => {
     gridItem.style.backgroundColor = '';
