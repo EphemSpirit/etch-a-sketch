@@ -10,7 +10,7 @@ function makeGrid (size) {
   }
 }
 
-makeGrid(16);
+makeGrid(54);
 
 let gridItems = document.querySelectorAll(".grid-item");
 
@@ -20,41 +20,36 @@ gridItems.forEach((gridItem) => {
   });
 });
 
-function clearSpace () {
-  while (container.firstChild) {
-    container.firstChild.remove();
-  }
-}
-
 //buttons
 let resetButton = document.querySelector("#reset-btn");
+
 resetButton.addEventListener("click", () => {
-  clearSpace();
-  makeGrid(16);
+  gridItems.forEach((gridItem) => {
+    gridItem.style.backgroundColor = '';
+  });
 });
 
 let resizeButton = document.querySelector("#resize-btn");
 resizeButton.addEventListener("click", () => {
-  clearSpace();
   const newSize = prompt("How many squares per side would you like?");
   makeGrid(newSize);
 });
 
-// let makeRed = document.querySelector("#make-red");
-// makeRed.addEventListener("click", () => {
-//   gridItems.forEach((gridItem) => {
-//     gridItem.addEventListener("mouseover", () => {
-//       gridItem.style.backgroundColor = '#b30000';
-//     });
-//   });
-// });
-//
-// let randomButton = document.querySelector("#random-clr");
-// let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple'];
-// randomButton.addEventListener("click", () => {
-//   gridItems.forEach((gridItem) => {
-//     gridItem.addEventListener("mouseover", () => {
-//       gridItem.style.backgroundColor = Math.floor(Math.random() * colors.length);
-//     });
-//   });
-// });
+let makeRed = document.querySelector("#make-red");
+makeRed.addEventListener("click", () => {
+  gridItems.forEach((gridItem) => {
+    gridItem.addEventListener("mouseover", () => {
+      gridItem.style.backgroundColor = '#b30000';
+    });
+  });
+});
+
+let randomButton = document.querySelector("#random-clr");
+let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple'];
+randomButton.addEventListener("click", () => {
+  gridItems.forEach((gridItem) => {
+    gridItem.addEventListener("mouseover", () => {
+      gridItem.style.backgroundColor = Math.floor(Math.random() * colors.length);
+    });
+  });
+});
