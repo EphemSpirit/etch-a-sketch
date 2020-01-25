@@ -1,7 +1,6 @@
 const container = document.getElementById("container");
 
-// let size = prompt("How many squares epr side would you like?");
-
+//default grid
 function makeGrid (size) {
   container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -21,23 +20,49 @@ gridItems.forEach((gridItem) => {
   });
 });
 
+function clearSpace () {
+  while (container.firstChild) {
+    container.firstChild.remove();
+  }
+}
+
 
 //buttons
 let resetButton = document.querySelector("#reset-btn");
 resetButton.addEventListener("click", () => {
-  gridItems.forEach((gridItem) => {
-    gridItem.style.backgroundColor = '';
-  });
+  clearSpace();
+  makeGrid(16);
 });
 
-let makeRed = document.querySelector("#make-red");
-makeRed.addEventListener("click", () => {
-  gridItems.forEach((gridItem) => {
-    gridItem.addEventListener("mouseover", () => {
-      gridItem.style.backgroundColor = 'red';
-    });
-  });
+let resizeButton = document.querySelector("#resize-btn");
+resizeButton.addEventListener("click", () => {
+  container.innerHTML = '';
+  const newSize = prompt("How many squares per side would you like?");
+  makeGrid(newSize);
 });
-// gridItem.onmouseover = function () {
-//   this.style.backgroundColor = 'black';
+
+// let makeRed = document.querySelector("#make-red");
+// makeRed.addEventListener("click", () => {
+//   gridItems.forEach((gridItem) => {
+//     gridItem.addEventListener("mouseover", () => {
+//       gridItem.style.backgroundColor = '#b30000';
+//     });
+//   });
+// });
+//
+// let randomButton = document.querySelector("#random-clr");
+// let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple'];
+// randomButton.addEventListener("click", () => {
+//   gridItems.forEach((gridItem) => {
+//     gridItem.addEventListener("mouseover", () => {
+//       gridItem.style.backgroundColor = Math.floor(Math.random() * colors.length);
+//     });
+//   });
+// });
+// let resizeButton = document.querySelector("#resize-btn");
+// resizeButton.addEventListener("click", resizeGrid());
+//
+// function resizeGrid () {
+//   let size = prompt("How many squares per side is your new canvas?");
+//   makeGrid(size);
 // }
