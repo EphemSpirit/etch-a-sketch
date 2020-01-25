@@ -1,7 +1,7 @@
-:root {
+/* :root {
   --grid-rows: 1;
   --grid-cols: 1;
-}
+} */
 
 /* #main-body {
   text-align: center;
@@ -16,8 +16,8 @@
 
 #container {
   display: grid;
-  grid-template-rows: repeat(var(--grid-rows), 1fr);
-  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  /* grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr); */
   margin-top: 75px;
   height: 500px;
   width: 500px;
@@ -25,10 +25,10 @@
   margin: 0 auto;
 }
 
-.grid-item {
+/* .grid-item {
   padding: 1em;
   border: 1px solid #ddd;
-}
+} */
 
 #nav {
   text-align: center;
