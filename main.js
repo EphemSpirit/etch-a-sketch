@@ -26,7 +26,6 @@ function clearSpace () {
   }
 }
 
-
 //buttons
 let resetButton = document.querySelector("#reset-btn");
 resetButton.addEventListener("click", () => {
@@ -36,7 +35,7 @@ resetButton.addEventListener("click", () => {
 
 let resizeButton = document.querySelector("#resize-btn");
 resizeButton.addEventListener("click", () => {
-  container.innerHTML = '';
+  clearSpace();
   const newSize = prompt("How many squares per side would you like?");
   makeGrid(newSize);
 });
@@ -59,10 +58,3 @@ resizeButton.addEventListener("click", () => {
 //     });
 //   });
 // });
-// let resizeButton = document.querySelector("#resize-btn");
-// resizeButton.addEventListener("click", resizeGrid());
-//
-// function resizeGrid () {
-//   let size = prompt("How many squares per side is your new canvas?");
-//   makeGrid(size);
-// }
