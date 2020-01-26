@@ -44,12 +44,29 @@ makeRed.addEventListener("click", () => {
   });
 });
 
+let makeBlack = document.querySelector("#black-btn");
+makeBlack.addEventListener("click", () => {
+  gridItems.forEach((gridItem) => {
+    gridItem.addEventListener("mouseover", () => {
+      gridItem.style.backgroundColor = 'black';
+    });
+  });
+});
+
+function getRandomColor () {
+  let letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 let randomButton = document.querySelector("#random-clr");
-let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple'];
 randomButton.addEventListener("click", () => {
   gridItems.forEach((gridItem) => {
     gridItem.addEventListener("mouseover", () => {
-      gridItem.style.backgroundColor = Math.floor(Math.random() * colors.length);
+      gridItem.style.backgroundColor = getRandomColor();
     });
   });
 });
